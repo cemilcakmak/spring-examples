@@ -1,11 +1,14 @@
 package com.cemil.springexamples;
 
 import com.cemil.springexamples.controllers.ConstructorInjectedController;
+import com.cemil.springexamples.controllers.MyController;
 import com.cemil.springexamples.controllers.PropertyInjectedController;
 import com.cemil.springexamples.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.sql.SQLOutput;
 
 @SpringBootApplication
 public class SpringExamplesApplication {
@@ -25,6 +28,11 @@ public class SpringExamplesApplication {
         System.out.println("=== Constructor Injected Controller, Spring Framework DI ===");
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+        System.out.println("=== Constructor Injected Controller, Spring Framework DI ===");
+        MyController controller = (MyController) ctx.getBean("myController");
+        System.out.println(controller.sayHello());
+
 
     }
 }
