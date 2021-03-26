@@ -1,7 +1,9 @@
 package com.cemil.springexamples.services.impl;
 
 import com.cemil.springexamples.services.GreetingService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GreetingServiceImpl implements GreetingService{
 
     @Override
